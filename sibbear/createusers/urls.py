@@ -6,7 +6,6 @@ urlpatterns = [
     path('', index, name='index'),
     path('create/', createusers, name='createusers'),
     path('exit/', authViews.LogoutView.as_view(next_page='/'), name='exit'),
-    path('completeuser/', authViews.LogoutView.as_view(next_page='/'), name='completeuser'),
+    path('complete_users/', authViews.LogoutView.as_view(next_page='/'), name='exit'),
 
 ]
-#test
