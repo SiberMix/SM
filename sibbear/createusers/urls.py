@@ -9,3 +9,4 @@ urlpatterns = [
     path('completeuser/', authViews.LogoutView.as_view(next_page='/'), name='completeuser'),
 
 ]
+#test
