@@ -11,12 +11,15 @@
     <header class="d-flex justify-content-center py-3">
         <ul class="nav nav-pills ps-25">
             <li class="nav-item"><a href="/" class="nav-link " aria-current="page">Главная</a></li>
-            <li class="nav-item"><a href="/create" class="nav-link ">Создать пользователя</a></li>
+            <li class="nav-item"><a href="/create/" class="nav-link ">Создать пользователя</a></li>
             <li class="nav-item"><a href="" class="nav-link ">Создать VPN</a></li>
             <li class="nav-item"><a href="/admin/" class="nav-link ">Django-Panel</a></li>
             <li class="nav-item"><a href="#" class="nav-link ">Права Google</a></li>
-            <li class="nav-item"><a href="/admin/login/?next=/" class="nav-link active">Авторизация</a></li>
-
+            {% if request.user.is_authenticated %}
+            <li class="nav-item"><a href="/exit/" class="nav-link active">Выход</a></li>
+            {% else %}
+            <li class="nav-item"><a href="/exit/" class="nav-link active"></a></li>
+            {% endif %}
         </ul>
     </header>
 </div>

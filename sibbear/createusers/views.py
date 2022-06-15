@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, request
-from django.contrib.auth.models import User
-from .models import City, Position
+from .form.createmantis import СreateusersForm
 
 
 def index(request):
@@ -10,5 +9,11 @@ def index(request):
     else:
         return HttpResponseRedirect("/admin/login/?next=/")
 
-def mantis(request):
-    return render(request, 'createusers/createmantis.html')
+def createusers(request):
+    if request.method == 'POST':
+        pass
+    else:
+        form = СreateusersForm()
+    return render(request, 'createusers/createmantis.html', {'form': form})
+
+
